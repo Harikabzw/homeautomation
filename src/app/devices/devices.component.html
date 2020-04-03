@@ -2,9 +2,9 @@
 <div class="container-fluid">
   <!-- Button trigger modal -->
   <div id="snackbar" role="alert"></div>
-  <button type="button" class="btn btn-secondary btn-sm mb-3" data-toggle="modal" data-target="#addDeviceModal">
+  <button type="button" style="float: right;"  class="btn btn-primary btn-sm mb-3" data-toggle="modal" data-target="#addDeviceModal">
     <fa-icon icon="plus"></fa-icon>
-    Add Device
+    Install Device
   </button>
   <!-- Add device modal -->
   <div class="modal fade" id="addDeviceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
@@ -41,7 +41,41 @@
   <!-- Devices list -->
   <div class="devices-container no-gutters">
     <!-- Device component -->
-    <app-device class="no-gutters" [registeredDevices]="registeredDevices" [isLoading]="isLoading"></app-device>
+    <!-- <app-device class="no-gutters" [registeredDevices]="registeredDevices" [isLoading]="isLoading"></app-device> -->
+    <div *ngFor="let device of registeredDevices" class="row align-items-center no-gutters col-lg-5 col-sm-12">
+      <span *ngIf="!isLoading">
+      <span *ngIf="device.connected" class="badge badge-success" data-toggle="tooltip" data-placement="top"
+            title="Device is connected">
+            <fa-icon icon="signal" size="m"></fa-icon>
+          </span>
+      <span *ngIf="!device.connected" [ngClass]="{opaque: !device.connected}" class="badge badge-danger"
+            data-toggle="tooltip" data-placement="top"
+            title="Device is not connected!">
+            <fa-icon icon="signal" size="m"></fa-icon>
+          </span>
+    </span>
+  <div class="device-container row no-gutters align-items-center col-12" [ngClass]="{blur: device['disconnected']}">
+      <span *ngIf="isLoading">
+        <fa-icon icon="spinner" [spin]="true" size="lg"></fa-icon>
+      </span>
+    <div *ngIf="!isLoading">
+      <fa-icon icon="microchip" size="lg" class="mr-lg-2 mr-1"></fa-icon>
+      <span class="device-type mr-lg-3 mr-2" data-toggle="tooltip" data-placement="top"
+            title="Device type"> {{device.hardware}} </span>
+      <fa-icon icon="address-card" size="lg" class="mr-lg-2 mr-1"></fa-icon>
+      <span class="device-name mr-lg-3 mr-2" data-toggle="tooltip" data-placement="top"
+            title="Device name"> {{device.name}} </span>
+     &nbsp;&nbsp;      
+         <button type="button" style="float: right;" class="close" aria-label="Dismiss" style="color: #ef4048;" >
+              <span aria-hidden="true">&times;</span>
+            </button>
+      
+    </div>
+  </div>
+ 
+
+</div>
+
     <!-- Empty devices/adding devices container -->
     <div class="row align-items-center no-gutters col-lg-5 col-sm-12">
       <div *ngIf="registeredDevices.length === 0"

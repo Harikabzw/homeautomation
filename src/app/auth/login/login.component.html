@@ -1,0 +1,70 @@
+
+
+<div class="container-scroller">
+  <div class="container-fluid page-body-wrapper full-page-wrapper">
+    <div class="content-wrapper d-flex align-items-center auth ">
+      <div class="row w-100">
+        <div class="col-lg-7 mx-auto">
+          <div class="row">
+            <div class="col-lg-6 g d-flex flex-row bgclr">
+              <ul class="text welcome-text" style="font-size:1.5rem;text-align:right;float:right;text-align:right;font-weight:light;list-style-type: none;font-family: Montserrat,sans-serif;">
+                <br><br><br>
+                <li style="line-height:2">Welcome to</li>
+                <li style="font-weight:700;line-height:1.7;width: 116%;margin-left: -48px;">Home Automation</li>
+                <li style="line-height:2.1">where everything is for <span style="font-weight:600;">you!</span></li>
+
+              </ul>
+              <footer class="footer pull-down" style="background-color:transparent;border:none;position:absolute;bottom:40px;color:#50575f;right:4%;">
+                <span  class="footer" style="color: #ffffff;" >Don't have any account.<a class="hover" (click)="showRegister()" style="text-decoration: underline;color:#232527" >Signup</a></span>
+                <br>
+               
+              </footer>
+
+            </div>
+            <div class="col-lg-6 lgrght" style="font-family:Montserrat,sans-serif;">
+
+              <div class="auth-form text-left p-3 lght">
+                <img src="./assets/images/microchip.svg" class="mt-5 center" style="height:60px;">
+                <h4 class="font-weight-light text-center text-secondary mt-4" style="color:#f4f4f4 !important;font-weight:300;font-family: Montserrat,sans-serif;font-size:1.13rem;">Login to your account</h4>
+                <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)" class="col-12" novalidate>
+                  <div class="form-group">
+                    <input type="email" name="email" email #email="ngModel" ngModel class="form-control" placeholder="Enter Email"
+                           autocomplete="username" required>
+                    <div *ngIf="signInForm.submitted && email.errors" class="invalid-form">
+                      <span *ngIf="email['errors']?.required">This field is required.</span>
+                      <span *ngIf="email['errors']?.email">Invalid email address.</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" #password="ngModel" ngModel class="form-control"
+                           placeholder="Enter Password" autocomplete="current-password" required>
+                    <div *ngIf="signInForm.submitted && password.errors" class="invalid-form">
+                      <span *ngIf="password['errors']?.required">This field is required.</span>
+                    </div>
+                  </div>
+                  <button type="submit"  style="float:center;"class="btn btn-info mt-3 mb-2" [disabled]="signingIn">
+                    <fa-icon *ngIf="signingIn" icon="sync-alt" [spin]="true" size="sm"></fa-icon>
+                    <ng-container *ngIf="!signingIn">
+                    
+                      <span>Sign In</span>
+                      <!-- <fa-icon icon="sign-in-alt" class="mr-1"></fa-icon> -->
+                    </ng-container>
+                  </button>
+                  
+                </form><br>
+
+                <!--<div class="copy-rights"><a href="#" style="color:#aeaeae;font-size:0.8rem;">&copy; 2018 Miracle Software Systems, Inc.</a></div>-->
+              
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content-wrapper ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>

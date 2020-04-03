@@ -1,9 +1,24 @@
 <app-navbar></app-navbar>
-<div class="container-fluid">
-  <button type="button" class="btn btn-secondary btn-sm mb-3" data-toggle="modal" data-target="#addWidgetModal">
-    <fa-icon icon="plus"></fa-icon>
-    Add Widget
-  </button>
-  <app-widget [registeredDevices]="registeredDevices"></app-widget>
+
+
+<div class="row no-gutters" style="margin-top: 3%;">
+
+  <div class="col-lg-3 col-xl-3 col-md-6 col-sm-12 widget mr-3">
+  
+  </div>
+  <div class="col-lg-3 col-xl-3 col-md-6 col-sm-12 widget mr-6">
+    <div class="card text-white bg-dark mb-3">
+      
+      <h5 class="card-header">
+        <fa-icon icon="thermometer-half" size="lg" class="mr-1"></fa-icon>
+        Welcome to Home Automation
+      </h5>
+      <div class="card-body">
+        <p> You Can Install devices and control Them</p>
+      
+      </div>
+    </div>
+  </div>
 </div>
+
 <!--<pre [hidden]="true" style="margin-left: 50%;">{{devices | json}}</pre>-->

@@ -1,15 +1,15 @@
 {
-  "name": "smarthaus",
+  "name": "homeautomation",
   "version": "1.3.0",
   "description": "Home automation system for monitoring and controlling IoT devices with a RESTful API",
   "author": {
-    "name": "Amir Off",
-    "email": "ameer157@gmail.com",
-    "url": "https://amiroff.me"
+    "name": "",
+    "email": "",
+    "url": ""
   },
   "license": "GPL-3.0",
   "scripts": {
-    "start": "cd backend && node server.js",
+    "start": "cd node-api && node server.js",
     "postinstall": "ng build --prod",
     "serve": "ng serve",
     "build": "ng build",
@@ -36,6 +36,8 @@
     "console-stamp": "^0.2.9",
     "core-js": "^2.6.11",
     "jquery": "^3.4.1",
+    "mongodb": "^3.0.0",
+    "node-sass": "^4.13.1",
     "smoothscroll-for-websites": "^1.4.10",
     "zone.js": "^0.8.29"
   },
@@ -61,7 +63,7 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "mongoose": "^4.13.20",
+    "mongoose": "^5.9.7",
     "nodemon": "^1.19.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

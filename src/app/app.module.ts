@@ -2,32 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { DeviceService } from './devices/device.service';
+import { DeviceService } from './services/device.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DevicesComponent } from './devices/devices.component';
-import { DeviceComponent } from './devices/device/device.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { WidgetComponent } from './dashboard/widget/widget.component';
 import { FontsModule } from './fonts.module';
 import { SnackbarUiService } from './shared/snackbar-ui.service';
 import { AuthenticationService } from './auth/authentication.service';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
-import { SignInComponent } from './auth/sign-in/sign-in.component';
+
 import { AuthGuard } from './auth/auth.guard';
 import { HttpJWTInterceptor } from './auth/http-jwt.interceptor';
+import { LoginComponent } from './auth/login/login.component';
+import { RegsiterComponent } from './auth/regsiter/regsiter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
-    SignInComponent,
-    DevicesComponent,
-    DeviceComponent,
     DashboardComponent,
-    WidgetComponent,
-    NavbarComponent
+    DevicesComponent,
+    NavbarComponent,
+  
+    LoginComponent,
+  
+    RegsiterComponent
   ],
   imports: [
     BrowserModule,

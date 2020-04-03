@@ -16,8 +16,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: $font-size;
   -webkit-font-smoothing: antialiased;
-  background: #306bbb; // Fallback for old browsers
-  background: linear-gradient(to top, #3a6073, #306bbb);
+ background: #ffffff; // Fallback for old browsers
+ //background: linear-gradient(to top, #3a6073, #5579ac);
+ overflow: hidden;
+ 
 }
 
 ::selection {
@@ -91,7 +93,7 @@ body {
       margin-top: 24px;
     }
     .login-page {
-      color: white;
+      color:  #3a6073;
       a {
         color: white;
         text-decoration: underline;
@@ -110,6 +112,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  
 }
 
 .dropdown-menu {
